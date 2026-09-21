@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://p38cg4fu3ncg"]
+
+[ext_resource type="Script" uid="uid://bhq440htdhb52" path="res://Scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://t20gvmfp0qb5" path="res://Assets/GameImage.jpg" id="2_7vrkn"]
+
+[node name="main_menu" type="Node2D" unique_id=1055193937]
+script = ExtResource("1_06t4h")
+
+[node name="Background" type="ColorRect" parent="." unique_id=811274565]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.84705883, 0.78039217, 0.9411765, 1)
+
+[node name="Title" type="Label" parent="." unique_id=391526172]
+offset_left = 400.0
+offset_top = 100.0
+offset_right = 833.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 48
+text = "My Game Portfolio"
+
+[node name="MyName" type="Label" parent="." unique_id=833274591]
+offset_left = 430.0
+offset_top = 170.0
+offset_right = 805.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 48
+text = "Made By Rohina"
+
+[node name="GameSection" type="PanelContainer" parent="." unique_id=394599042]
+offset_left = 226.0
+offset_top = 240.0
+offset_right = 988.0
+offset_bottom = 590.0
+
+[node name="MarginContainer" type="MarginContainer" parent="GameSection" unique_id=1345240915]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Game1" type="HBoxContainer" parent="GameSection/MarginContainer" unique_id=65416264]
+layout_mode = 2
+
+[node name="GameImage" type="TextureRect" parent="GameSection/MarginContainer/Game1" unique_id=1246953553]
+custom_maximum_size = Vector2(300, 180)
+layout_mode = 2
+texture = ExtResource("2_7vrkn")
+stretch_mode = 5
+
+[node name="GameInfo" type="VBoxContainer" parent="GameSection/MarginContainer/Game1" unique_id=875392640]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="GameSection/MarginContainer/Game1/GameInfo" unique_id=1048074695]
+layout_mode = 2
+text = "My First Godot Game"
+
+[node name="GameDescription" type="Label" parent="GameSection/MarginContainer/Game1/GameInfo" unique_id=1679160805]
+layout_mode = 2
+text = "A 3D game demonstrating player movement, jumping,
+collision detection, obstacles, and scene navigation."
+
+[node name="Contributors" type="Label" parent="GameSection/MarginContainer/Game1/GameInfo" unique_id=3067139]
+layout_mode = 2
+text = "Contributors: Rohina Sultani"
+
+[node name="LaunchButton" type="Button" parent="GameSection/MarginContainer/Game1/GameInfo" unique_id=1107310782]
+layout_mode = 2
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="." unique_id=348492868]
+offset_left = 980.0
+offset_top = 20.0
+offset_right = 1130.0
+offset_bottom = 70.0
+text = "Quit"
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
